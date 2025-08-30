@@ -10,6 +10,14 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Primary accent and semantic colors for the site theme
+        accent: '#0449df',
+        'accent-dark': '#0337b3',
+        surface: '#ffffff',
+        'surface-dark': '#0f172a',
+        muted: '#6b7280',
+        border: '#e5e7eb',
+        'border-dark': '#374151',
         darkTheme: "#0f172a",
       },
       fontFamily: {
