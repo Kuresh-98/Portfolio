@@ -61,10 +61,21 @@ const Navbar = () => {
     sideMenuRef.current.style.transform = 'translateX(16rem)'
   }
 
-  const getLinkClass = (section) =>
-    `font-outfit font-medium transition duration-300 ${
-      activeSection === section ? 'text-blue-600 underline' : 'text-gray-700'
-    }`
+  const getLinkClass = (section) => {
+    const active = activeSection === section
+    if (isDarkMode) {
+      return [
+        'font-outfit font-medium transition-colors duration-300',
+        active ? 'text-white underline decoration-2 underline-offset-4' : 'text-indigo-100',
+        'hover:text-white'
+      ].join(' ')
+    }
+    return [
+      'font-outfit font-medium transition-colors duration-300',
+      active ? 'text-indigo-700 underline decoration-2 underline-offset-4' : 'text-gray-700',
+      'hover:text-indigo-700'
+    ].join(' ')
+  }
 
   return (
     <>
@@ -73,17 +84,25 @@ const Navbar = () => {
       </div>
 
       <nav
-        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4
-       flex items-center justify-between z-50 ${
-         isScroll ? 'bg-white bg-opacity-50 backdrop-blur-lg shadow-sm' : ''
-       }`}
+        className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 transition-colors duration-300 ${
+          isDarkMode
+            ? isScroll
+              ? 'bg-gradient-to-r from-indigo-600/90 via-indigo-600/85 to-indigo-500/85 text-white backdrop-blur-md shadow-md border border-indigo-400/20'
+              : 'bg-gradient-to-r from-indigo-600/95 via-indigo-600/90 to-indigo-500/90 text-white backdrop-blur-lg shadow-md border border-indigo-300/25'
+            : isScroll
+            ? 'bg-white/80 backdrop-blur-md text-gray-900 shadow-sm border border-gray-200'
+            : 'bg-white text-gray-900'
+        }`}
       >
         <p className='font-ovo text-2xl tracking-wider text-[#0449df]'>KURESH</p>
 
-        <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
-          ${isScroll ? '' : ' bg-white shadow-sm bg-opacity-50'}`}
-        >
+        <ul className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-10 py-2.5 transition-all duration-300 ${
+          isDarkMode
+            ? 'bg-indigo-500/20 border border-indigo-300/20 backdrop-blur-sm'
+            : isScroll
+            ? 'bg-white/60 backdrop-blur-md border border-gray-200'
+            : 'bg-white shadow-sm border border-gray-100'
+        }`}>
           <li>
             <a className={getLinkClass('top')} href='#top'>
               Home
@@ -135,8 +154,11 @@ const Navbar = () => {
         {/* ------------- mobile menu ------------- */}
         <ul
           ref={sideMenuRef}
-          className='flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64
-          top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 transition duration-500'
+          className={`flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen transition duration-500 ${
+            isDarkMode
+              ? 'bg-gradient-to-b from-indigo-600 via-indigo-600/95 to-indigo-500 text-white'
+              : 'bg-rose-50'
+          }`}
         >
           <div className='absolute right-6 top-6' onClick={closeMenu}>
             <Image src={assets.close_black} alt='' className='w-5 cursor-pointer' />

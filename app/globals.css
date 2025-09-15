@@ -4,8 +4,10 @@
   /* Color system */
   --color-accent: #0449df;
   --color-accent-600: #0337b3;
-  --color-surface: #ffffff;
-  --color-muted: #111827;
+  /* Light mode global surface now a stronger light gray so difference is visible */
+  --color-surface: #eceff1; /* was #ffffff */
+  /* Darken primary text color for better contrast */
+  --color-muted: #0b1220;
   --color-border: #e5e7eb;
   --shadow-sm: 0 1px 2px rgba(16,24,40,0.04);
 }
@@ -19,6 +21,19 @@
   --color-border: #374151;
 }
 
+/* Dark mode readability overrides for Tailwind gray utilities */
+.dark .text-gray-700 { color: #d6d6df !important; }
+.dark .text-gray-600 { color: #cfcfe0 !important; }
+.dark .text-gray-800 { color: #ffffff !important; }
+.dark .text-gray-900 { color: #ffffff !important; }
+.dark .text-gray-500 { color: #9ca3af !important; }
+
+/* Make .card friendlier in dark mode */
+.dark .card{
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+  border: 1px solid var(--color-border);
+}
+
 *{
   box-sizing: border-box;
 }
@@ -30,6 +45,23 @@ html, body {
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
+/* Make all Tailwind white backgrounds adopt the new light gray in light mode */
+html:not(.dark) .bg-white { background-color: #eceff1 !important; }
+html:not(.dark) .bg-white\/80 { background-color: rgba(236,239,241,0.8) !important; }
+html:not(.dark) .bg-white\/60 { background-color: rgba(236,239,241,0.6) !important; }
+
+/* Force sections and nav that might have their own white bg to adopt gray */
+html:not(.dark) nav.bg-white, html:not(.dark) section.bg-white, html:not(.dark) header.bg-white, html:not(.dark) .card.bg-white {
+  background-color: #eceff1 !important;
+}
+
+/* Improve contrast for Tailwind gray text in light mode only */
+html:not(.dark) .text-gray-700 { color: #0b1220 !important; }
+html:not(.dark) .text-gray-600 { color: #1a2530 !important; }
+html:not(.dark) .text-gray-800 { color: #03060a !important; }
+html:not(.dark) .text-gray-900 { color: #00050a !important; }
+html:not(.dark) .text-gray-500 { color: #374151 !important; }
 
 html { scroll-behavior: smooth; }
 

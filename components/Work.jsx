@@ -25,8 +25,8 @@ const Work = () => {
             style={{ backgroundImage: `url(${project.bgImage})` }}
           >
             <div
-              className="bg-white dark:bg-gray-900 w-11/12 rounded-lg absolute bottom-4 left-1/2 -translate-x-1/2 py-3 px-4 
-              flex items-center justify-between group-hover:bottom-6 transition-all duration-500"
+              className="card w-11/12 rounded-lg absolute bottom-4 left-1/2 -translate-x-1/2 py-3 px-4 
+              flex items-center justify-between group-hover:bottom-6 transition-all duration-500 border border-theme"
             >
               <div>
                 <h2 className="text-base font-semibold text-gray-800 dark:text-white">
@@ -40,8 +40,7 @@ const Work = () => {
                 <Image
                   src={assets.send_icon}
                   alt="send icon"
-                  className="border rounded-full border-black dark:border-white w-9 h-9 p-2
-                  bg-white dark:bg-gray-800 shadow-lg group-hover:bg-lime-300 transition"
+                  className="border rounded-full border-theme w-9 h-9 p-2 bg-white dark:bg-gray-800 shadow-lg group-hover:bg-accent transition"
                 />
               </div>
             </div>

@@ -20,9 +20,8 @@ const Services = () => {
         {serviceData.map(({ icon, title, description }, index) => (
           <div
             key={index}
-            className="border border-gray-300 rounded-xl px-8 py-12 bg-white dark:bg-gray-900
-            hover:shadow-lg hover:shadow-pink-100 dark:hover:bg-pink-900/20 hover:bg-pink-100
-            transition-all duration-500 transform hover:-translate-y-1 cursor-pointer"
+            className="card border border-theme rounded-xl px-8 py-12
+            transition-all duration-500 transform hover:shadow-lg hover:-translate-y-1 cursor-pointer"
           >
             <Image src={icon} alt={title} className="w-10 mb-4" />
             <h3 className="text-lg font-semibold mb-2 text-gray-800 dark:text-white">
