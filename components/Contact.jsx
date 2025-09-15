@@ -42,12 +42,14 @@ const Contact = () => {
   <h3 className="text-center mb-3 text-sm font-ovo uppercase tracking-[0.35em] text-indigo-600 dark:text-indigo-700">
         Connect With Me
       </h3>
-  <h2 className="text-center text-4xl sm:text-5xl font-ovo font-semibold mb-10 text-gray-900 dark:text-gray-900">
-        Get in touch
-      </h2>
-  <p className="text-center max-w-2xl mx-auto mt-2 mb-12 font-outfit text-[15px] sm:text-base text-gray-700 dark:text-gray-700 leading-relaxed">
-        I'd love to hear from you! If you have any questions, comments, or feedback, please use the form below.
-      </p>
+          <div className="flex flex-col items-center mb-12 fade-up">
+            <h2 className="text-center text-4xl sm:text-5xl font-ovo font-semibold tracking-tight inline-block px-6 py-2 rounded-xl bg-white/80 dark:bg-[#1e2634]/70 text-gray-900 dark:text-white shadow-sm border border-white/60 dark:border-white/10 backdrop-blur-sm">
+              Get in touch
+            </h2>
+          </div>
+          <p className="fade-up text-center max-w-2xl mx-auto -mt-4 mb-14 font-outfit text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
+            I'd love to hear from you! If you have any questions, comments, or feedback, please use the form below.
+          </p>
 
       <form className="max-w-2xl mx-auto" onSubmit={onSubmit}>
     <div className="flex flex-col sm:flex-row gap-6 mb-8">

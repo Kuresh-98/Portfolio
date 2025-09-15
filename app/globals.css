@@ -46,11 +46,22 @@ html, body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Prevent initial dark flash for navbar */
+html:not(.dark) .no-flash-nav { background-color:#ffffff !important; color:#0b1220 !important; }
+
 /* Make all Tailwind white backgrounds adopt the new light gray in light mode */
 html:not(.dark) .bg-white { background-color: #eceff1 !important; }
 html:not(.dark) .bg-white\/80 { background-color: rgba(236,239,241,0.8) !important; }
 html:not(.dark) .bg-white\/60 { background-color: rgba(236,239,241,0.6) !important; }
 
+
+/* Force readable text when custom gradients wash out default colors */
+.force-dark-text { color: #0b1220 !important; }
+.dark .force-dark-text { color: #ffffff !important; }
+
+/* Simple fade-up animation */
+@keyframes fadeUp { from { opacity:0; transform: translateY(18px); } to { opacity:1; transform: translateY(0); } }
+.fade-up { animation: fadeUp .7s ease-out both; }
 /* Force sections and nav that might have their own white bg to adopt gray */
 html:not(.dark) nav.bg-white, html:not(.dark) section.bg-white, html:not(.dark) header.bg-white, html:not(.dark) .card.bg-white {
   background-color: #eceff1 !important;

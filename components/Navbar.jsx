@@ -92,7 +92,8 @@ const Navbar = () => {
             : isScroll
             ? 'bg-white/80 backdrop-blur-md text-gray-900 shadow-sm border border-gray-200'
             : 'bg-white text-gray-900'
-        }`}
+        } no-flash-nav`}
+        data-theme-initial={isDarkMode ? 'dark' : 'light'}
       >
         <p className='font-ovo text-2xl tracking-wider text-[#0449df]'>KURESH</p>
 
