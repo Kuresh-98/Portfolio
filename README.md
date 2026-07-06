@@ -1,8 +1,8 @@
-# 3D Portfolio Website
+# Kuresh Garbada - 3D Portfolio Website
 
-This repository contains the source code for a personal 3D portfolio built with React, TypeScript, Three.js, React Three Fiber, and GSAP. It includes animated page sections, a character scene, custom cursor interactions, and smooth transitions designed for a modern portfolio experience.
+This repository contains the source code for a personal 3D portfolio built with React, TypeScript, Three.js, and GSAP. It includes animated page sections, an interactive 3D character scene, custom cursor interactions, and smooth transitions.
 
-Live site: [https://akashrmalhotra.netlify.app/](https://akashrmalhotra.netlify.app/)
+Live site: [https://github.com/Kuresh-98/Portfolio](https://github.com/Kuresh-98/Portfolio)
 
 ![Portfolio Preview](public/images/preview1.png)
 
@@ -90,8 +90,8 @@ Live site: [https://akashrmalhotra.netlify.app/](https://akashrmalhotra.netlify.
 1. Clone the repository:
 
    ```bash
-   git clone <your-repository-url>
-   cd 3d-portfolio
+   git clone https://github.com/Kuresh-98/Portfolio.git
+   cd Portfolio
    ```
 
 2. Install dependencies:
