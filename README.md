@@ -2,7 +2,7 @@
 
 This repository contains the source code for a personal 3D portfolio built with React, TypeScript, Three.js, and GSAP. It includes animated page sections, an interactive 3D character scene, custom cursor interactions, and smooth transitions.
 
-Live site: [https://github.com/Kuresh-98/Portfolio](https://github.com/Kuresh-98/Portfolio)
+Live site: [https://github.com/Kuresh-98/Portfolio](https://portfolio-kuresh-garbada.vercel.app/)
 
 ![Portfolio Preview](public/images/preview1.png)
 
